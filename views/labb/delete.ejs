@@ -1,0 +1,24 @@
+<%- include("header"); %>
+
+<% res = res[0] %>
+<form class="label-left" method="post" action="/delete">
+    <fieldset>
+        <legend>Edit Equipment status</legend>
+
+        <label for="id">Id</label>
+        <input id="id" type="number" name="id" readonly value="<%= res.id %>">
+
+        <label for="namn">Namn</label>
+        <input id="namn" type="text" name="namn" readonly value="<%= res.namn %>">
+
+        <label for="model">Model</label>
+        <input id="model" type="text" name="model" readonly value="<%= res.model %>">
+
+        <label for="stat">status</label>
+        <input id="stat" type="text" name="stat" value="<%= res.stat %>">
+
+        <input type="submit" name="doit" value="Remove Equipment">
+    </fieldset>
+</form>
+
+<%- include("footer"); %>

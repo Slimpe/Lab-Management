@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS labb;
+
+USE labb;
+
+GRANT ALL PRIVILEGES
+ON *.*
+TO 'user'@'%'
+WITH GRANT OPTION
+;
+
+
+

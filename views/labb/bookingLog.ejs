@@ -1,0 +1,31 @@
+<%- include("header"); %>
+
+<H1>Your current bookings in the system</H1>
+<table>
+    <tr>
+        <th>Booking ID</th>
+        <th>User ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Equipment ID</th>
+        <th>Equipment name</th>
+        <th>Equipment model</th>
+        <th>booked</th>
+        <th>Return by</th>
+        <th>Returned</th>
+    </tr>
+<% for (const row of res) { %>
+    <tr>
+        <th><%=row.booking_nr%></th>
+        <th><%=row.id%></th>
+        <th><%=row.name%></th>
+        <th><%=row.email%></th>
+        <th><%=row.equipment_id%></th>
+        <th><%=row.namn%></th>
+        <th><%=row.model%></th>
+        <th><%=row.booked%></th>
+        <th><%=row.whenReturn%></th>
+        <th><%=row.returned%></th>
+    </tr>
+<% }; %>
+</table>

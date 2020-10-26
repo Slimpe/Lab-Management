@@ -1,0 +1,46 @@
+<%- include("header"); %>
+
+<H1>Your current bookings in the system</H1>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Model</th>
+        <th>Status</th>
+        <th>Booked on</th>
+        <th>Return by</th>
+    </tr>
+<% for (const row of res) { %>
+    <tr>
+        <th><%=row.equipment_id%></th>
+        <th><%=row.namn%></th>
+        <th><%=row.model%></th>
+        <th><%=row.stat%></th>
+        <th><%=row.booked%></th>
+        <th><%=row.whenToReturn%></th>
+    </tr>
+<% }; %>
+</table>
+<form class="lable-left" method="post">
+    <table>
+        <tr>
+            <th>Equipment</th>
+            <th>Choose</th>
+        </tr>
+        <tr>
+            <td>
+                <select name="EquipmentID">
+                    <% for (const row of res) {%>
+                        <option value="<%= row.equipment_id%>"><%=row.equipment_id%></option>
+                    <%}; %>
+                </select>
+            </td>
+            <td>
+                <input type="submit" name="doit" value="Return">
+                <input type="hidden" name="userid" value="<%=userid%>">
+            </td>
+        </tr> 
+    </table>
+</form>
+
+<%- include("footer"); %>

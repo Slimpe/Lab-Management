@@ -1,0 +1,32 @@
+<%- include("header"); %>
+
+<h1>Ändra produkter</h1>
+
+<table>
+    <tr>
+        <th>id</th>
+        <th>Name</th>
+        <th>model</th>
+
+        
+    </tr>
+<% for (const row of res) { %>
+    <tr>
+        <td><%= row.id %></td>
+        <td><%= row.namn %></td>
+        <td><%= row.model %></td>
+        <td><%= row.stat %></td>
+        <td>
+            <a href="/edit/<%= row.id %>">
+                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+            </a>
+            <a href="/delete/<%= row.id %>">
+            <i class="fa fa-trash-o" aria-hidden="true"></i>
+        </a>
+        </td>
+
+    </tr>
+<% }; %>
+</table>
+
+<%- include("footer"); %>

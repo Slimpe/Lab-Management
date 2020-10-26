@@ -1,0 +1,26 @@
+<%- include("header", {title: title}); %>
+
+<h1>All the equipment in the lab</h1>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Model</th>
+        <th>Status</th>    
+    </tr>
+<% for (const row of res) { %>
+    <tr>
+        <td><%= row.id %></td>
+        <td><%= row.namn %></td>
+        <td><%= row.model %></td>
+        <td><%= row.stat %></td>
+    </tr>
+<% }; %>
+</table>
+
+<p>
+    <a href="/index">Start</a>
+</p>
+
+<%- include("footer"); %>

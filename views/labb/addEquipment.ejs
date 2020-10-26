@@ -1,0 +1,23 @@
+<%- include("header", {title: title}); %>
+
+<form class="label-left" method="post">
+    <fieldset>
+        <legend>Add new equipment</legend>
+
+        <label for="id">Id</label>
+        <input id="id" type="text" name="id">
+
+        <label for="namn">Name</label>
+        <input id="namn" type="text" name="namn">
+
+        <label for="model">Model</label>
+        <input id="model" type="text" name="model">
+
+        <label for="stat">Status</label>
+        <input id="stat" type="text" name="stat" readonly value="OK">
+        
+        <input type="submit" name="doit" value="Add">
+    </fieldset>
+</form>
+
+<%- include("footer"); %>
