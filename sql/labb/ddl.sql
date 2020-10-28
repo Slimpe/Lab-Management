@@ -146,6 +146,10 @@ CREATE PROCEDURE delete_equipment(
 	e_id INT
 )
 BEGIN
+	DELETE FROM bookedlog
+    WHERE
+		equip_id = e_id;
+
 	DELETE FROM currently_booked_equiment
     WHERE
 		equipment_id = e_id;
@@ -158,7 +162,6 @@ BEGIN
 END
 ;;
 DELIMITER ;
-
 
 DELIMITER ;;
 CREATE PROCEDURE show_all()
