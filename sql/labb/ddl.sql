@@ -175,7 +175,9 @@ DELIMITER ;
 DELIMITER ;;
 CREATE PROCEDURE show_available_equipment()
 BEGIN
-	SELECT * FROM equipmentIndex;
+	SELECT * FROM equipmentIndex
+    WHERE
+		equipment_stat = "ok";
 END
 ;;
 DELIMITER ;
